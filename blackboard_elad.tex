@@ -37,17 +37,23 @@ maxbibnames=9
 Every Linear Programming problem can be converted to a canonical form that is:
 \begin{eqnarray}
 	\textsf{\textbf{Primal}}&&\nonumber\\
-	\textsf{maximize}&\myvector{c}^\top\myvector{x}&\nonumber\\
-	\textsf{subject to}&\mymatrix{A}\myvector{x} \leq \myvector{b}&\nonumber\\
-	\textsf{and}&\myvector{x}\geq \myvector{0}&
+	&\textsf{maximize}&\myvector{c}^\top\myvector{x}\nonumber\\
+	&\textsf{subject to}&\mymatrix{A}\myvector{x} \leq \myvector{b}\nonumber\\
+	&\textsf{and}&\myvector{x}\geq \myvector{0}\,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \end{eqnarray}
 
-Dual
+The dual is a symmetrical linear problem described by the following constraints
 \begin{eqnarray}
 	\textsf{\textbf{Dual}}&&\nonumber\\
-	\textsf{minimize}&\myvector{b}^\top\myvector{y}&\nonumber\\
-	\textsf{subject to}&\mymatrix{A}^\top\myvector{y} \geq \myvector{c}&\nonumber\\
-	\textsf{and}&\myvector{y}\geq 0&
+	&\textsf{minimize}&\myvector{b}^\top\myvector{y}\nonumber\\
+	&\textsf{subject to}&\mymatrix{A}^\top\myvector{y} \geq \myvector{c}\nonumber\\
+	&\textsf{and}&\myvector{y}\geq 0\,.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\end{eqnarray}
+
+If the primal has an optimal solution ($\myvector{x}^*$), then the dual will also have an optimal solution ($\myvector{y}^*$) and their values will be equal:
+\begin{eqnarray}
+	\textsf{\textbf{Strong duality theorem}}&&\nonumber\\
+	&&\myvector{c}^\top\myvector{x}^* = \myvector{b}^\top\myvector{y}^*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \end{eqnarray}
 
 Linear Programming problems can be solved very efficiently using established algorithms such as Simplex. Many good solvers exist for LP, including open source options such as glpk, CLP, and the internal R-project solver.
